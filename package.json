@@ -1,0 +1,29 @@
+{
+  "name": "queens-infi-co-op-api",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/socket.io": "^3.0.2",
+    "concurrently": "^9.1.0",
+    "nodemon": "^3.1.7"
+  },
+  "scripts": {
+    "prisma:generate": "prisma generate",
+    "prisma:push": "prisma db push",
+    "prisma:watch": "nodemon --watch prisma/schema.prisma --exec \"npm run prisma:generate && npm run prisma:push\"",
+    "dev": "bun run src/index.ts"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "@prisma/engine": "^1.0.18",
+    "@types/express": "^5.0.0",
+    "express": "^4.21.1",
+    "prisma": "^5.22.0",
+    "socket.io": "^4.8.1",
+    "zod": "^3.23.8"
+  }
+}
